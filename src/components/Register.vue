@@ -234,7 +234,7 @@ export default {
         },
 
         registerFail:function(){
-            alert("账号密码错误");
+            alert("注册信息错误,请输入正确的信息,注意密码必须包含大写字母,小写字母,数字,和特殊符号[!@#$%^&*]");
             this.clearUserInfo();
         },
 
