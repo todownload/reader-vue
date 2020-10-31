@@ -1,12 +1,13 @@
-
+import Vue from 'vue';
 import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
-import Login from '../components/Login.vue'
-import Register from '../components/Register.vue'
-import BookList from '../components/BookList.vue'
-import BookDetail from '../components/BookDetail'
-import ChapterView from '../components/ChapterView.vue'
-import NotFound from '../components/ChapterView.vue'
+import Login from '../components/Login.vue';
+import Register from '../components/Register.vue';
+import BookList from '../components/BookList.vue';
+import BookDetail from '../components/BookDetail';
+import ChapterView from '../components/ChapterView.vue';
+import NotFound from '../components/NotFound.vue';
 
 const router = new VueRouter({
     routes:[
