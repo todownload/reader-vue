@@ -133,6 +133,8 @@ const PHONE_CHN = "手机";
 
 import { AXIOS_POST_CONFIG } from '../resources/config.js';
 
+import {VALID_PHONE,VALID_EMAIL,VALID_PWD} from '../resources/valid.js'
+
 export default {
     name:'Login',
 
@@ -160,7 +162,6 @@ export default {
     },
 
     
-
     methods:{
         changeRegisterType:function(){
             if(this.registerType === EMAIL_CHN){
@@ -177,11 +178,11 @@ export default {
         },
 
         validEmail:function(){
-            return this.userEmail.length > 0 ;
+            return VALID_EMAIL(this.userEmail);
         },
 
         validPhone:function(){
-            return this.userPhone.length > 0;
+            return VALID_PHONE(this.userPhone);
         },
 
         validName:function(){
@@ -190,7 +191,7 @@ export default {
 
         validPwd:function(){
             let equal = this.userPwd === this.confirmPwd;
-            return equal && this.userPwd.length > 0;
+            return equal && VALID_PWD(this.userPwd)
         },
 
         register:function(url,fd,cfg){

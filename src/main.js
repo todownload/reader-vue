@@ -53,7 +53,7 @@ router.beforeEach((to,from,next)=>{
     }
     else if(!to.meta.requireAuth && isAuth){
         alert("您已登录...")
-        next(false);
+        next({name:'book-list'});
     }
     else{
         next();
