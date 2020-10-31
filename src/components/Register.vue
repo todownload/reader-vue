@@ -20,10 +20,18 @@
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>{{registerType}}</label>
+                    <label>
+                        {{registerType}}
+                        <a-tooltip>
+                            <template #title>
+                                请输入正确的邮箱
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear v-model.trim="userEmail" >
+                    <a-input :maxLength='30' allowClear v-model.trim="userEmail" >
                         <a-icon slot='suffix' type="mail" />
                     </a-input>
                 </a-col>
@@ -31,10 +39,18 @@
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>昵称</label>
+                    <label>
+                        昵称
+                        <a-tooltip>
+                            <template #title>
+                                请输入昵称
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear v-model.trim="userName" >
+                    <a-input :maxLength='30' allowClear v-model.trim="userName" >
                         <a-icon slot='suffix' type="user" />
                     </a-input>
                 </a-col>
@@ -42,19 +58,35 @@
 
             <a-row class="row">
                  <a-col offset="4" span="4">
-                    <label>密码</label>
+                    <label>
+                        密码
+                        <a-tooltip>
+                            <template #title>
+                                密码必须包含大写字母,小写字母,数字,和特殊符号[!@#$%^&*]
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12" >
-                    <a-input-password allowClear  v-model.trim="userPwd"  />
+                    <a-input-password :maxLength='30' allowClear  v-model.trim="userPwd"  />
                 </a-col>
             </a-row>
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>确认密码</label>
+                   <label>
+                        确认密码
+                        <a-tooltip>
+                            <template #title>
+                                密码必须包含大写字母,小写字母,数字,和特殊符号[!@#$%^&*]
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input-password allowClear v-model.trim="confirmPwd" />
+                    <a-input-password :maxLength='30' allowClear v-model.trim="confirmPwd" />
                 </a-col>
             </a-row>
 
@@ -73,10 +105,18 @@
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>{{registerType}}</label>
+                    <label>
+                        {{registerType}}
+                        <a-tooltip>
+                            <template #title>
+                                请输入正确的号码
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear v-model.trim="userPhone" >
+                    <a-input allowClear :maxLength='11' v-model.trim="userPhone" >
                         <a-icon slot='suffix' type="phone" />
                     </a-input>
                 </a-col>
@@ -84,10 +124,18 @@
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>昵称</label>
+                    <label>
+                        昵称
+                        <a-tooltip>
+                            <template #title>
+                                请输入昵称
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear v-model.trim="userName" >
+                    <a-input allowClear :maxLength='30' v-model.trim="userName" >
                         <a-icon slot='suffix' type="user" />
                     </a-input>
                 </a-col>
@@ -95,19 +143,35 @@
 
             <a-row class="row">
                  <a-col offset="4" span="4">
-                    <label>密码</label>
+                    <label>
+                        密码
+                        <a-tooltip>
+                            <template #title>
+                                密码必须包含大写字母,小写字母,数字,和特殊符号[!@#$%^&*]
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12" >
-                    <a-input-password allowClear v-model.trim="userPwd" />
+                    <a-input-password :maxLength='30' allowClear v-model.trim="userPwd" />
                 </a-col>
             </a-row>
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>确认密码</label>
+                    <label>
+                        确认密码
+                        <a-tooltip>
+                            <template #title>
+                                密码必须包含大写字母,小写字母,数字,和特殊符号[!@#$%^&*]
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input-password allowClear v-model.trim="confirmPwd" />
+                    <a-input-password :maxLength='30' allowClear v-model.trim="confirmPwd" />
                 </a-col>
             </a-row>
 

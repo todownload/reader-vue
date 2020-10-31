@@ -20,18 +20,34 @@
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>{{loginType}}</label>
+                    <label>
+                        {{loginType}}
+                        <a-tooltip>
+                            <template #title>
+                                请输入正确的邮箱
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear v-model.trim="userEmail" >
+                    <a-input allowClear :maxLength='30' v-model.trim="userEmail" >
                         <a-icon slot='suffix' type="mail" />
                     </a-input>
                 </a-col>
             </a-row>
 
             <a-row class="row">
-                 <a-col offset="4" span="4">
-                    <label>密码</label>
+                 <a-col offset="4" :maxLength='30' span="4">
+                    <label>
+                        密码
+                        <a-tooltip>
+                            <template #title>
+                                请输入正确的密码
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12" >
                     <a-input-password allowClear  v-model.trim="userPwd"  />
@@ -53,10 +69,18 @@
 
             <a-row class="row">
                 <a-col offset="4" span="4">
-                    <label>{{loginType}}</label>
+                    <label>
+                        {{loginType}}
+                        <a-tooltip>
+                            <template #title>
+                                请输入正确的号码
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear v-model.trim="userPhone" >
+                    <a-input allowClear :maxLength='11' v-model.trim="userPhone" >
                         <a-icon slot='suffix' type="phone" />
                     </a-input>
                 </a-col>
@@ -64,10 +88,18 @@
 
             <a-row class="row">
                  <a-col offset="4" span="4">
-                    <label>密码</label>
+                    <label>
+                        密码
+                        <a-tooltip>
+                            <template #title>
+                                请输入正确的密码
+                            </template>
+                            <a-icon type="info-circle" />
+                        </a-tooltip>
+                    </label>
                 </a-col>
                 <a-col span="12" >
-                    <a-input-password allowClear v-model.trim="userPwd" />
+                    <a-input-password :maxLength='30' allowClear v-model.trim="userPwd" />
                 </a-col>
             </a-row>
 
@@ -92,6 +124,7 @@ const EMAIL_CHN = "邮箱";
 const PHONE_CHN = "手机";
 
 import { AXIOS_POST_CONFIG } from '../resources/config.js';
+import {VALID_PHONE,VALID_EMAIL,VALID_PWD} from '../resources/valid.js'
 
 export default {
     name:'Login',
@@ -135,15 +168,15 @@ export default {
         },
 
         validEmail:function(){
-            return this.userEmail.length > 0;
+            return VALID_EMAIL(this.userEmail);
         },
 
         validPhone:function(){
-            return this.userPhone.length > 0;
+            return VALID_PHONE(this.userPhone);
         },
 
         validPwd:function(){
-            return this.userPwd.length > 0;
+            return VALID_PWD(this.userPwd);
         },
 
         login:function(url,fd,cfg){
