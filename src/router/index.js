@@ -38,13 +38,31 @@ const router = new VueRouter({
             path:'/book-detail',
             component:BookDetail,
             name:'book-detail',
-            meta:{requireAuth:true}
+            meta:{requireAuth:true},
+            beforeEnter:function(to,from,next){
+                let bookId = to.params.bookId ;
+                if(bookId&&bookId>0){
+                    next();
+                }
+                else{
+                    next({name:'book-list'});
+                }
+            }
         },
         {
             path:'/chapter-view',
             component:ChapterView,
             name:'chapter-view',
-            meta:{requireAuth:true}
+            meta:{requireAuth:true},
+            beforeEnter:function(to,from,next){
+                let bookId = to.params.bookId ;
+                if(bookId&&bookId>0){
+                    next();
+                }
+                else{
+                    next({name:'book-list'});
+                }
+            }
         },
         {
             path:'*',

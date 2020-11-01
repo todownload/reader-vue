@@ -11,8 +11,8 @@ Vue.use(VueAxios,axios);
 
 Vue.config.productionTip = false
 
-import { Button,Dropdown,Menu,Icon,Row,Col,Layout,List,Card,Modal,Form,Input,Select,
-    Divider,Radio,Upload,Steps,Checkbox,InputNumber,Progress,Table,Pagination,Tooltip} from 'ant-design-vue';
+import { Button,Icon,Row,Col,Input,Tooltip,Layout,List,Card,Modal,Divider,
+    Pagination,Space,PageHeader,Drawer} from 'ant-design-vue';
 
 Vue.use(Button);
 Vue.use(Icon);
@@ -21,23 +21,15 @@ Vue.use(Col);
 Vue.use(Input);
 Vue.use(Tooltip);
 
-Vue.use(Dropdown);
-Vue.use(Menu);
 Vue.use(Layout);
 Vue.use(List);
 Vue.use(Card);
 Vue.use(Modal);
-Vue.use(Form);
-Vue.use(Select);
 Vue.use(Divider);
-Vue.use(Radio);
-Vue.use(Upload);
-Vue.use(Steps);
-Vue.use(Checkbox);
-Vue.use(InputNumber);
-Vue.use(Progress);
-Vue.use(Table);
 Vue.use(Pagination);
+Vue.use(PageHeader);
+Vue.use(Drawer);
+Vue.use(Space)
 
 
 import App from './App.vue';

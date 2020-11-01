@@ -31,7 +31,7 @@
                     </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input :maxLength='30' allowClear v-model.trim="userEmail" >
+                    <a-input :maxLength='30' allowClear v-model.trim="userEmail" placeholder="请输入邮箱" >
                         <a-icon slot='suffix' type="mail" />
                     </a-input>
                 </a-col>
@@ -50,7 +50,7 @@
                     </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input :maxLength='30' allowClear v-model.trim="userName" >
+                    <a-input :maxLength='30' allowClear v-model.trim="userName" placeholder="请输入昵称" >
                         <a-icon slot='suffix' type="user" />
                     </a-input>
                 </a-col>
@@ -69,7 +69,7 @@
                     </label>
                 </a-col>
                 <a-col span="12" >
-                    <a-input-password :maxLength='30' allowClear  v-model.trim="userPwd"  />
+                    <a-input-password :maxLength='30' allowClear  v-model.trim="userPwd" placeholder="请输入密码"  />
                 </a-col>
             </a-row>
 
@@ -86,7 +86,7 @@
                     </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input-password :maxLength='30' allowClear v-model.trim="confirmPwd" />
+                    <a-input-password :maxLength='30' allowClear v-model.trim="confirmPwd" placeholder="请确认密码" />
                 </a-col>
             </a-row>
 
@@ -116,7 +116,7 @@
                     </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear :maxLength='11' v-model.trim="userPhone" >
+                    <a-input allowClear :maxLength='11' v-model.trim="userPhone" placeholder="请输入号码" >
                         <a-icon slot='suffix' type="phone" />
                     </a-input>
                 </a-col>
@@ -135,7 +135,7 @@
                     </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input allowClear :maxLength='30' v-model.trim="userName" >
+                    <a-input allowClear :maxLength='30' v-model.trim="userName" placeholder="请输入昵称" >
                         <a-icon slot='suffix' type="user" />
                     </a-input>
                 </a-col>
@@ -154,7 +154,7 @@
                     </label>
                 </a-col>
                 <a-col span="12" >
-                    <a-input-password :maxLength='30' allowClear v-model.trim="userPwd" />
+                    <a-input-password :maxLength='30' allowClear v-model.trim="userPwd" placeholder="请输入密码" />
                 </a-col>
             </a-row>
 
@@ -171,7 +171,7 @@
                     </label>
                 </a-col>
                 <a-col span="12">
-                    <a-input-password :maxLength='30' allowClear v-model.trim="confirmPwd" />
+                    <a-input-password :maxLength='30' allowClear v-model.trim="confirmPwd" placeholder="请确认密码" />
                 </a-col>
             </a-row>
 
