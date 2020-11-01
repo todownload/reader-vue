@@ -196,8 +196,9 @@ const EMAIL_CHN = "邮箱";
 const PHONE_CHN = "手机";
 
 import { AXIOS_POST_CONFIG } from '../resources/config.js';
+import { VALID_PHONE, VALID_EMAIL, VALID_PWD } from '../resources/valid.js';
+import { REGISTER_USER_EMAIL,  REGISTER_USER_PHONE } from '../resources/url.js';
 
-import {VALID_PHONE,VALID_EMAIL,VALID_PWD} from '../resources/valid.js'
 
 export default {
     name:'Login',
@@ -211,8 +212,6 @@ export default {
             userName:'',
             userPwd:'',
             confirmPwd:'',
-            emailRegisterUrl:'/reader/user/register/email',
-            phoneRegisterUrl:'/reader/user/register/phone',
         }
     },
 
@@ -280,7 +279,7 @@ export default {
             fd.append('userName',this.userName);
             fd.append('userPwd',this.userPwd);
 
-            this.register(this.emailRegisterUrl,fd,AXIOS_POST_CONFIG);
+            this.register(REGISTER_USER_EMAIL,fd,AXIOS_POST_CONFIG);
         },
 
         registerWithPhone:function(){
@@ -289,7 +288,7 @@ export default {
             fd.append('userName',this.userName);
             fd.append('userPwd',this.userPwd);
 
-            this.register(this.phoneRegisterUrl,fd,AXIOS_POST_CONFIG);
+            this.register(REGISTER_USER_PHONE,fd,AXIOS_POST_CONFIG);
         },
 
         registerSuccess:function({id,userName}){

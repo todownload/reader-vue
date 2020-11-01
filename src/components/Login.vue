@@ -17,7 +17,7 @@
         </a-row>
 
         <div v-if='emailLogin'>
-
+            
             <a-row class="row">
                 <a-col offset="4" span="4">
                     <label>
@@ -124,7 +124,8 @@ const EMAIL_CHN = "邮箱";
 const PHONE_CHN = "手机";
 
 import { AXIOS_POST_CONFIG } from '../resources/config.js';
-import {VALID_PHONE,VALID_EMAIL,VALID_PWD} from '../resources/valid.js'
+import { VALID_PHONE, VALID_EMAIL, VALID_PWD} from '../resources/valid.js';
+import { LOGIN_USER_EMAIL, LOGIN_USER_PHONE } from '../resources/url.js';
 
 export default {
     name:'Login',
@@ -136,8 +137,6 @@ export default {
             userEmail:'',
             userPhone:'',
             userPwd:'',
-            emailLoginUrl:'/reader/user/login/email',
-            phoneLoginUrl:'/reader/user/login/phone',
         }
     },
 
@@ -200,7 +199,7 @@ export default {
             fd.append('userEmail',this.userEmail);
             fd.append('userPwd',this.userPwd);
 
-            this.login(this.emailLoginUrl,fd,AXIOS_POST_CONFIG);
+            this.login(LOGIN_USER_EMAIL,fd,AXIOS_POST_CONFIG);
         },
 
         loginWithPhone:function(){
@@ -208,7 +207,7 @@ export default {
             fd.append('userPhone',this.userPhone);
             fd.append('userPwd',this.userPwd);
 
-            this.login(this.phoneLoginUrl,fd,AXIOS_POST_CONFIG);
+            this.login(LOGIN_USER_PHONE,fd,AXIOS_POST_CONFIG);
         },
 
         loginSuccess:function({id,userName}){
